@@ -13,11 +13,10 @@ const Home = (props) => {
   const [filter, setFilter] = useState(0);
   const [price, setPrice] = useState(0);
   const [page, setPage] = useState(1);
-  const [pagination, setPagination] = useState(true)
 
   //Function for Filter Items.
   const filterItems = () => {
-    setPagination(false);
+    setPage(1);
     if (!price) {
       setItems(Items.filter((elem) => {
         return (elem.category === filter);
@@ -40,12 +39,11 @@ const Home = (props) => {
     setItems(Items);
     setFilter(0)
     setPrice(0)
-    setPagination(true)
   }
 
   const pageHandle = (selectedPage) => {
     console.log(selectedPage);
-    if (selectedPage >= 1 && selectedPage <= items.length / 8 && selectedPage !== page)
+    if (selectedPage >= 1 && selectedPage <= Math.ceil(items.length / 8) && selectedPage !== page)
       setPage(selectedPage);
   }
   return (
@@ -85,14 +83,14 @@ const Home = (props) => {
         {items.length > 0 ? '' : <h3>No items Exist with Provided Filter</h3>}
       </div>
       {
-        pagination &&
+        items&&
         <nav aria-label="Page navigation example">
           <ul className="pagination d-flex justify-content-center">
             <li className="page-item page-link" onClick={() => { pageHandle(page - 1) }} >
               <span aria-hidden="true" style={{ cursor: 'pointer' }}>&laquo;</span>
             </li>
             {
-              [...Array(items.length / 8)].map((_, i) => {
+              [...Array(Math.ceil(items.length / 8))].map((_, i) => {
                 return <li className="page-item page-link" key={i + 1} style={{ cursor: 'pointer', backgroundColor: `${page === (i + 1) ? '#0d6efd' : ''}`, color: `${page !== (i + 1) ? '#0d6efd' : 'white'}` }} onClick={() => { pageHandle(i + 1) }}>{i + 1}</li>;
               })
             }
