@@ -48,7 +48,7 @@ const Home = (props) => {
   }
   return (
     <>
-      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: 'cornflowerblue', fontFamily: 'Belanosima' }}>
+      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: 'cornflowerblue'}}>
         <div className="container-fluid">
           <select className="form-select" aria-label="Default select example" value={filter} onChange={(event) => {
             setFilter(event.target.value)

@@ -24,7 +24,7 @@ const Item = (props) => {
         <img src={image} className="card-img-top" alt="..." />
         <div className="card-body">
           <h3 className="card-title">{category}</h3>
-          <p className="card-text">{description}</p>
+          <p className="card-text" style={{fontSize: '12px'}}>{description}</p>
           <h5 className="card-title">price : {price}/-</h5>
           <button className="btn btn-primary my-2" style={{width:'100%'}} onClick={placeOrder}>{btn}</button>
           <button className="btn btn-danger" style={{display:`${location.pathname === '/orders'?'block':'none'}`,width:"100%"}} onClick={()=>{deleteOrder(id)}}>Delete</button>
