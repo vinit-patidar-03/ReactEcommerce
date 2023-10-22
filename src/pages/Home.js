@@ -42,7 +42,6 @@ const Home = (props) => {
   }
 
   const pageHandle = (selectedPage) => {
-    console.log(selectedPage);
     if (selectedPage >= 1 && selectedPage <= Math.ceil(items.length / 8) && selectedPage !== page)
       setPage(selectedPage);
   }

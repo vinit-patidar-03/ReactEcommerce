@@ -15,7 +15,6 @@ const Item = (props) => {
   const placeOrder = ()=>
   {
     setOrders([...new Set(orders.concat(Items.filter((elem)=>{return elem.id===id})))]);
-    console.log(orders);
   }
 
   return (
