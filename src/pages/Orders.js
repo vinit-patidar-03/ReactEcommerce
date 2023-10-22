@@ -36,7 +36,7 @@ const Orders = (props) => {
       "key": key,
       "amount": order.amount,
       "currency": "INR",
-      "name": "Acme Corp",
+      "name": "Vinit",
       "description": "Test Transaction",
       "image": "https://avatars.githubusercontent.com/u/117593724?v=4",
       "order_id": order.id,
