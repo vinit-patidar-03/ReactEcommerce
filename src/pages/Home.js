@@ -47,7 +47,7 @@ const Home = (props) => {
   }
   return (
     <>
-      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: 'cornflowerblue'}}>
+      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: 'cornflowerblue' }}>
         <div className="container-fluid">
           <select className="form-select" aria-label="Default select example" value={filter} onChange={(event) => {
             setFilter(event.target.value)
@@ -82,7 +82,7 @@ const Home = (props) => {
         {items.length > 0 ? '' : <h3>No items Exist with Provided Filter</h3>}
       </div>
       {
-        items&&
+        items &&
         <nav aria-label="Page navigation example">
           <ul className="pagination d-flex justify-content-center">
             <li className="page-item page-link" onClick={() => { pageHandle(page - 1) }} >
